@@ -39,7 +39,7 @@ variable "cron-snapshot-module-vars" {
   }))
   default = [
     {
-      bucket-name               = "moneycare-buh-1c-functions-object-storage"
+      bucket-name               = "my-functions-object-storage"
       cron-spawn-snapshot-tasks = "5 3 * * ? *"
       cron-delete-expired-tasks = "0 6 * * ? *"
       ttl                       = 604800
