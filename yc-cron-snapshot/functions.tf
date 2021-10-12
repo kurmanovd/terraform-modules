@@ -41,7 +41,8 @@ resource "yandex_function" "spawn-snapshot-tasks" {
     object_name = yandex_storage_object.cloud-functions-object.key
   }
   depends_on = [
-    yandex_storage_object.cloud-functions-object
+    yandex_storage_object.cloud-functions-object,
+    yandex_message_queue.snapshot_queue
   ]
 }
 

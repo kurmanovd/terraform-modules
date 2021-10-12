@@ -33,7 +33,8 @@ resource "yandex_function_trigger" "snapshot-disks-tasks" {
     service_account_id = yandex_iam_service_account.sa-functions.id
   }
   depends_on = [
-    yandex_function.snapshot-disks-tasks
+    yandex_function.snapshot-disks-tasks,
+    yandex_message_queue.snapshot_queue
   ]
 }
 
