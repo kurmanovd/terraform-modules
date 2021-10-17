@@ -18,7 +18,7 @@ func DeleteHandler(ctx context.Context) (*Response, error) {
 	// Авторизация в SDK при помощи сервисного аккаунта
 	sdk, err := ycsdk.Build(ctx, ycsdk.Config{
 		// Вызов InstanceServiceAccount автоматически запрашивает IAM-токен и формирует
-		// при помощи него данные для авторизации в SDK
+		// при помощи него данные для авторизации в SDK 
 		Credentials: ycsdk.InstanceServiceAccount(),
 	})
 	if err != nil {
