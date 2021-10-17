@@ -47,6 +47,8 @@ func SnapshotHandler(ctx context.Context, event MessageQueueEvent) (*Response, e
 	snapshotOp, err := sdk.WrapOperation(sdk.Compute().Snapshot().Create(ctx, &compute.CreateSnapshotRequest{
 		FolderId: createSnapshotParams.FolderId,
 		DiskId:   createSnapshotParams.DiskId,
+		Name: createSnapshotParams.DiskName,
+		Description: expirationTs,
 		Labels: map[string]string{
 			"expiration_ts": expirationTs,
 		},
