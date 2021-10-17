@@ -46,8 +46,11 @@ func SnapshotHandler(ctx context.Context, event MessageQueueEvent) (*Response, e
 	snapshotName := createSnapshotParams.DiskName + "-" + expirationTs
 	
 	// Генерируем Description для снепшота
-	tm := time.Unix(expirationTs, 0)
-	snapshotDescription := "Expiration: " + fmt.Println(tm)
+	i, err := strconv.ParseInt(expirationTs, 10, 64)
+	if err != nil {
+		return nil, err
+	}
+	snapshotDescription := "Expiration: " + fmt.Println(time.Unix(i, 0))
 
 	// При помощи YC SDK создаем снепшот, указывая в лейблах время его жизни.
 	// Он не будет удален автоматически Облаком. Этим будет заниматься функция описанная в ./delete-expired.go
