@@ -1,4 +1,6 @@
-go 1.16
+module yc-cron-snapshot
+
+go 1.17
 
 require (
 	github.com/aws/aws-sdk-go v1.37.15

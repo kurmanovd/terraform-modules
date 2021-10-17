@@ -59,4 +59,3 @@ variable "cron-snapshot-module-vars" {
 terraform get -update  # Update modules
 terraform taint module.cron-snapshot-module.yandex_storage_object.cloud-functions-object  # Force recreate Object
 ```
-Force recreate obkect
