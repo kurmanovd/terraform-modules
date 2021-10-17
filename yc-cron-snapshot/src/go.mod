@@ -1,5 +1,3 @@
-module github.com/nikolaymatrosov/go-yc-serverless-snapshot
-
 go 1.16
 
 require (
