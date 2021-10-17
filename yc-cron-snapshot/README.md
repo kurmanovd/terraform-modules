@@ -1,16 +1,20 @@
 # Terraform Yandex.Cloud Cron Snapshot Module
 
-Простой Terraform модуль для создания снимков дисков в Yandex.Cloud по расписанию
+A simple Terraform module for creating disk snapshots in Yandex.Cloud on crone
 
-Используются сервисы:
+## Requirements
 
+* Terraform v1.0.7+
+* Go 1.16 (Cloud Functions)
+
+## Yandex.Cloud Services
+
+* Service Account
 * Object Storage
 * Cloud Functions
 * Message Queue
 
-Исходники функций [nikolaymatrosov](https://github.com/nikolaymatrosov/go-yc-serverless-snapshot)
-
-## Пример использования
+## Using the module
 
 main.tf
 
