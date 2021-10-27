@@ -44,7 +44,7 @@ func SnapshotHandler(ctx context.Context, event MessageQueueEvent) (*Response, e
 
 	// Генерируем Name для снепшота
 	// Значение не может быть длиннее 63 символов
-	snapshotName := expirationTs + "-" + createSnapshotParams.DiskName 
+	snapshotName := "snapshot" + "-" + expirationTs + "-" + createSnapshotParams.DiskName 
 	l := 63	
 	if len(snapshotName) < l {
 		l = len(snapshotName)	
