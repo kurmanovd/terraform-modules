@@ -22,7 +22,7 @@ resource "yandex_function" "spawn-snapshot-tasks" {
   name               = "spawn-snapshot-tasks"
   description        = "Add message to Yandex Queue"
   user_hash          = data.archive_file.cloud-functions-archive-files.output_sha
-  runtime            = "golang116"
+  runtime            = "golang117"
   entrypoint         = "spawn-snapshot-tasks.SpawnHandler" 
   memory             = "128"
   execution_timeout  = "30"
@@ -51,7 +51,7 @@ resource "yandex_function" "snapshot-disks-tasks" {
   name               = "snapshot-disks-tasks"
   description        = "Snapshot Disks"
   user_hash          = data.archive_file.cloud-functions-archive-files.output_sha
-  runtime            = "golang116"
+  runtime            = "golang117"
   entrypoint         = "snapshot-disks.SnapshotHandler" 
   memory             = "128"
   execution_timeout  = "60"
@@ -74,7 +74,7 @@ resource "yandex_function" "delete-expired-tasks" {
   name               = "delete-expired-tasks"
   description        = "Delete Expired Snapshots"
   user_hash          = data.archive_file.cloud-functions-archive-files.output_sha
-  runtime            = "golang116"
+  runtime            = "golang117"
   entrypoint         = "delete-expired.DeleteHandler" 
   memory             = "128"
   execution_timeout  = "60"
